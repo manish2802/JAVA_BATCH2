@@ -1,5 +1,7 @@
 package com.newzen.service;
 
+import com.newzen.dao.LoginDAOImpl;
+
 public class LoginBOImpl implements LoginBO {
 
 	public static LoginBOImpl INSTANCE;
@@ -18,7 +20,9 @@ public class LoginBOImpl implements LoginBO {
 	@Override
 	public boolean login(String userName, String password) {
 		// TODO Auto-generated method stub
-		return false;
+		 boolean b=LoginDAOImpl.getInstance().login(userName, password);
+		
+		return b;
 	}
 
 }

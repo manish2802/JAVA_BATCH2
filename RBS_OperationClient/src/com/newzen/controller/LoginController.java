@@ -1,3 +1,8 @@
+
+/**
+ * @author Manish Verma
+ *  
+ */
 package com.newzen.controller;
 
 import java.io.IOException;
@@ -25,7 +30,26 @@ public class LoginController extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("doPost");
+		response.setContentType("text/html");
+		PrintWriter pw = response.getWriter();
+		RequestDispatcher rd = null;
+
+		String userName = request.getParameter("uname");
+		String password = request.getParameter("psw");
+
+		// Business Layer
+		// boolean b = LoginBOImpl.getInstance().login(userName,password);
+		if (true) {
+			request.getRequestDispatcher("static/navigation.html").include(request, response);
+
+			request.getRequestDispatcher("static/home.html").include(request, response);
+
+		} else {
+			rd = request.getRequestDispatcher("static/login.html");
+			rd.forward(request, response);// method may be include or forward
+
+		}
+		pw.close();
 	}
 
 }
