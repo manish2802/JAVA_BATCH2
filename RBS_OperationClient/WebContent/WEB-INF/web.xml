@@ -43,4 +43,15 @@
 		<servlet-name>trans</servlet-name>
 		<url-pattern>/trans</url-pattern>
 	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>root</servlet-name>
+		<servlet-class>com.newzen.controller.RootController
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>root</servlet-name>
+		<url-pattern>/dash-board</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -3,7 +3,6 @@ package com.newzen.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,7 +16,7 @@ public class RootController extends HttpServlet {
 
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		RequestDispatcher rd = request.getRequestDispatcher("static/navigation.html");
+		request.getRequestDispatcher("static/navigation.html").include(request, response);;
 
 		pw.close();
 

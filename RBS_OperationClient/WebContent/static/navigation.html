@@ -3,23 +3,43 @@
 <head>
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link rel="stylesheet" href="css/home.css">
+<script>
+	function f() {
+		debugger;
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("target").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "home", true);
+		xhttp.send();
+	}
+
+	function m() {
+		debugger;
+		var xhttp = new XMLHttpRequest();
+		xhttp.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				document.getElementById("target").innerHTML = this.responseText;
+			}
+		};
+		xhttp.open("GET", "cusonboard", true);
+		xhttp.send();
+	}
+</script>
 </head>
 <body>
 
-<div class="topnav">
-  <a class="active" href="home">Home</a>
-  <a href="home">Dashboard</a>
-  <a href="cusonboard">CustomrOnboarding</a>
-            
-   <a href="trans">TransferAmmout</a>
-  <a href="loan">Loan</a>
-   <a href="card">Card</a>  
- 
-</div>
+	<div class="topnav">
+		<a class="active" onclick="return f();">Home</a> 
+		<a onclick="return m();">CustomrOnboarding</a>
+	    <a href="trans">TransferAmmout</a>
+		<a href="loan">Loan</a> <a href="card">Card</a>
+	</div>
 
-<div style="padding-left:16px">
- 
-</div>
+	<div style="padding-left: 16px"></div>
+	<div id="target">target</div>
 
 </body>
 </html>

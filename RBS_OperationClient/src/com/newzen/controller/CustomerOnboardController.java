@@ -18,7 +18,7 @@ public class CustomerOnboardController extends HttpServlet {
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
-		request.getRequestDispatcher("static/navigation.html").include(request, response);
+		//request.getRequestDispatcher("static/navigation.html").include(request, response);
 
 		request.getRequestDispatcher("static/customerinfo.html").include(request, response);
 
